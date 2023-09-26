@@ -14,5 +14,14 @@ namespace Parcels.Tests
       Parcel newParcel = new Parcel(3, 3, 3, 2);
       Assert.AreEqual(typeof(Parcel), newParcel.GetType());
     }
+
+    [TestMethod]
+    public void GetLength_ReturnsLength_Int()
+    {
+      int length = 4;
+      Parcel newParcel = new(length, 3, 3, 2);
+      int result = newParcel.Length;
+      Assert.AreEqual(length, result);
+    }
   }
 }
