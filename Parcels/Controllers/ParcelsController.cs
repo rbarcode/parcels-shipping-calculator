@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Parcels.Models;
+using System.Collections.Generic;
 
 namespace Parcels.Controllers
 {
@@ -14,7 +15,7 @@ namespace Parcels.Controllers
     [HttpPost("/estimate")]
     public ActionResult Create(int length, int width, int height, int weight)
     {
-      Parcel newParcel = new(length, width, height, weight);
+      Parcel newParcel = new Parcel(length, width, height, weight);
       // int newVolume = newParcel.Volume();
       // int newCost = newParcel.CostToShip(newVolume);
       return RedirectToAction("Index", newParcel);
@@ -23,8 +24,8 @@ namespace Parcels.Controllers
     [HttpGet("/estimate")]
     public ActionResult Index()
     {
-      
-      return View();
+      List<Parcel> allParcels = Parcel.GetAll();
+      return View(allParcels);
     }
   }
 }

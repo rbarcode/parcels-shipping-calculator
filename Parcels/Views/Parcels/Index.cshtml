@@ -10,9 +10,15 @@
 <body>
   @using Parcels.Models;
 
+  <ul>
+    @foreach (Parcel parcel in Model)
+    {
+      <li>The cost to ship your parcel is: $@parcel.CostToShip(parcel.Volume())</li>
+    }
+
+  </ul>
 
 
-  Test Test
 </body>
 
 </html>
