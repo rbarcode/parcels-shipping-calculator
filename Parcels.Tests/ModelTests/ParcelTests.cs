@@ -32,5 +32,59 @@ namespace Parcels.Tests
       newParcel.Length = length;
       Assert.AreEqual(length, newParcel.Length);
     }
+
+    [TestMethod]
+    public void GetWidth_ReturnWidth_Int()
+    {
+      int width = 2;
+      Parcel newParcel = new(2, width, 3, 2);
+      int result = newParcel.Width;
+      Assert.AreEqual(width, result);
+    }
+
+    [TestMethod]
+    public void SetWidth_SetsValueOfWidth_Void()
+    {
+     Parcel newParcel = new(5, 3, 3, 2);
+     int width = 4;
+     newParcel.Width = width;
+     Assert.AreEqual(width, newParcel.Width);
+    }
+  
+    [TestMethod]
+    public void GetHeight_GetsHeight_Int()
+    {
+      int height = 6;
+      Parcel newParcel = new(3, 3, height, 2);
+      int result = newParcel.Height;
+      Assert.AreEqual(height, result);
+    }
+
+    [TestMethod]
+    public void SetHeight_SetsHeight_Void()
+    {
+      Parcel newParcel = new(4, 4, 6, 2);
+      int newHeight = 2;
+      newParcel.Height = newHeight;
+      Assert.AreEqual(newHeight, newParcel.Height);
+    }
+
+    [TestMethod]
+    public void GetWeight_GetsWeight_Int()
+    {
+      int weight = 10;
+      Parcel newParcel = new (3, 3, 3, weight);
+      int result = newParcel.Weight;
+      Assert.AreEqual(weight, result);
+    }
+
+    [TestMethod]
+    public void SetWeight_SetsWeight_Void()
+    {
+      Parcel newParcel = new(3, 3, 3, 10);
+      int newWeight = 5;
+      newParcel.Weight = newWeight;
+      Assert.AreEqual(newWeight, newParcel.Weight);
+    }
   }
 }
