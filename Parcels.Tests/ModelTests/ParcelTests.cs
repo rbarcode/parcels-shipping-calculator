@@ -94,5 +94,14 @@ namespace Parcels.Tests
       int newVolume = newParcel.Volume();
       Assert.AreEqual(20, newVolume);
     }
+
+    [TestMethod]
+    public void CostToShip_CalcCostToShip_Int()
+    {
+      Parcel newParcel = new(2, 2, 5, 10);
+      int newVolume = newParcel.Volume();
+      int price = newParcel.CostToShip(newVolume);
+      Assert.AreEqual(20000, price);
+    }
   }
 }

@@ -22,5 +22,11 @@ namespace Parcels.Models
       int volume = Length * Width * Height;
       return volume;
     }
+
+    public int CostToShip(int volume)
+    {
+      int cost = volume * Weight * 100;
+      return cost;
+    }
   }
 }
