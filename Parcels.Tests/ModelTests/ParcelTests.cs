@@ -23,5 +23,14 @@ namespace Parcels.Tests
       int result = newParcel.Length;
       Assert.AreEqual(length, result);
     }
+
+    [TestMethod]
+    public void SetLength_SetsValueOfLength_Void()
+    {
+      Parcel newParcel = new(5, 3, 3, 2);
+      int length = 4;
+      newParcel.Length = length;
+      Assert.AreEqual(length, newParcel.Length);
+    }
   }
 }
