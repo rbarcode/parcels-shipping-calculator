@@ -86,5 +86,13 @@ namespace Parcels.Tests
       newParcel.Weight = newWeight;
       Assert.AreEqual(newWeight, newParcel.Weight);
     }
+
+    [TestMethod]
+    public void Volume_CalculateVolumeForParcel_Int()
+    {
+      Parcel newParcel = new(2, 2, 5, 10);
+      int newVolume = newParcel.Volume();
+      Assert.AreEqual(20, newVolume);
+    }
   }
 }
